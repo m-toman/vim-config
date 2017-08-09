@@ -35,7 +35,7 @@ function package () {
 }
 (
 set_group filemanagement
-package https://github.com/kien/ctrlp.vim.git &
+package https://github.com/ctrlpvim/ctrlp.vim.git &
 wait
 ) &
 (
