@@ -13,6 +13,7 @@ autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd Filetype cpp setlocal expandtab tabstop=3 shiftwidth=3
 autocmd Filetype c setlocal expandtab tabstop=3 shiftwidth=3
 autocmd Filetype sh setlocal expandtab tabstop=3 shiftwidth=3
+autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 
 " use C-L to get back to command mode
 :imap <C-L> <Esc>
