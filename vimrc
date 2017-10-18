@@ -58,6 +58,8 @@ set directory=~/.vim/swapfiles//
 
 syntax on
 
+set encoding=UTF-8
+
 " ctrl-p use current file
 let g:ctrlp_working_path_mode = 'ra'
 
