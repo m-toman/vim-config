@@ -17,6 +17,10 @@ Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-airline/vim-airline'
 
+Plugin 'scrooloose/nerdtree'
+
+Plugin 'flazz/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,7 +39,6 @@ filetype plugin indent on    " required
 
 " ==== other settings ====
 set bs=2
-set background=dark
 set ruler
 "set number
 "set colorcolumn=80
@@ -65,3 +68,7 @@ set encoding=UTF-8
 " ctrl-p use current file
 let g:ctrlp_working_path_mode = 'ra'
 
+" nerdtree key
+map <C-t> :NERDTreeToggle<CR>
+
+colorscheme Monokai
