@@ -58,6 +58,9 @@ inoremap jk <Esc>`^
 vnoremap < <gv
 vnoremap > >gv
 
+" put search on -
+nnoremap - /
+
 " Put vim files in the temp directory instead of the current directory
 set directory=~/.vim/swapfiles//
 
