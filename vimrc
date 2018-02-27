@@ -21,6 +21,8 @@ Plugin 'scrooloose/nerdtree'
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'elixir-editors/vim-elixir'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
