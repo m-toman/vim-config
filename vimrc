@@ -23,6 +23,15 @@ Plugin 'flazz/vim-colorschemes'
 
 Plugin 'elixir-editors/vim-elixir'
 
+Plugin 'tell-k/vim-autopep8'
+
+Plugin 'vim-scripts/indentpython.vim'
+
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -46,11 +55,42 @@ set ruler
 "set colorcolumn=80
 set incsearch
 
-autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+" leader key to space
+let mapleader=" "
+
+" syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" ==== python stuff ====
+autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent
+" flag whitespaces
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" "python with virtualenv support
+" py << EOF
+" import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
+"
+" ====
 autocmd Filetype cpp setlocal expandtab tabstop=3 shiftwidth=3
 autocmd Filetype c setlocal expandtab tabstop=3 shiftwidth=3
 autocmd Filetype sh setlocal expandtab tabstop=3 shiftwidth=3
 autocmd Filetype javascript setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+
+" auto complete window
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " use C-L to get back to command mode
 inoremap <C-L> <Esc>
@@ -76,4 +116,14 @@ let g:ctrlp_working_path_mode = 'ra'
 " nerdtree key
 map <C-t> :NERDTreeToggle<CR>
 
-colorscheme Monokai
+if has('gui_running')
+  set background=dark
+  colorscheme solarized
+else
+  colorscheme zenburn
+  "colorscheme Monokai
+endif
+
+" autopep8 on save
+let g:autopep8_on_save = 1
+let g:autopep8_disable_show_diff=1
